@@ -3,6 +3,7 @@ import classes from "./results-title.module.css";
 
 function ResultsTitle(props) {
   const { date } = props;
+  console.log(props);
 
   const humanReadableDate = new Date(date).toLocaleDateString("en-US", {
     month: "long",
