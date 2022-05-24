@@ -38,9 +38,7 @@ export default async function handler(req, res) {
   }
 
   if (req.method === "GET") {
-    const client = await MongoClient.connect(
-      "mongodb+srv://admin:ommgDc2mGYD7jwq5@cluster0.npg59.mongodb.net/events?retryWrites=true&w=majority"
-    );
+    const client = await MongoClient.connect(process.env.MONGODB_DATABASE_URL);
 
     const db = client.db();
     const comments = await db
